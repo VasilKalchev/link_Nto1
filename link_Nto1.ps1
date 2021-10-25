@@ -11,13 +11,13 @@ from the source directories.
 
 This can be useful when you want to specify multiple folders to be consumed by
 a program, but the program only allows selecting a single folder and it doesn't
-iterate through its sub-directories (e.g. "Windows Desktop Background"). This
-way you'll be able to quickly reconfigure the set of folders that will be
-consumed.
+iterate through its sub-directories (e.g. "Windows 10 Desktop Background
+Slideshow"). This way you'll be able to quickly reconfigure the set of folders
+that will be consumed.
 
 How to create a parametrized, runnable shortcut?
 Create the shortcut. In "Properties", field "Target": prepend "powershell"
-before "/path/link_to_one_from_many.ps1" and after it, append the desired
+before "/path/link_Nto1.ps1" and after it, append the desired
 arguments.
 
 .NOTES
@@ -31,12 +31,12 @@ One or more source directories.
 Either 'HardLink' or 'SymbolicLink'. Default: 'HardLink'
 
 .EXAMPLE
-PS> ./link_to_one_from_many dst_dir src_dir1,src_dir2
+PS> ./link_Nto1.ps1 dst_dir src_dir1,src_dir2
 .EXAMPLE
-PS> ./link_to_one_from_many -dst dst_dir -srcs src_dir1 -ItemType SymbolicLink
+PS> ./link_Nto1.ps1 -dst dst_dir -srcs src_dir1 -ItemType SymbolicLink
 
 .LINK
-https://gist.github.com/VaSe7u/1234
+https://github.com/VaSe7u/link_Nto1
 #>
 
 
