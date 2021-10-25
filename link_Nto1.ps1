@@ -42,7 +42,7 @@ https://github.com/VaSe7u/link_Nto1
 
 param(
 	[parameter(mandatory)] [string] $dst,
-	[parameter(mandatory)] [Object[]] $srcs,
+	[parameter(mandatory)] [string[]] $srcs,
 	[validateset('HardLink','SymbolicLink')] [string] $ItemType='HardLink'
 )
 
