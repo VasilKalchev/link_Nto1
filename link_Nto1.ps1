@@ -12,13 +12,13 @@ from the source directories.
 This can be useful when you want to specify multiple folders to be consumed by
 a program, but the program only allows selecting a single folder and it doesn't
 iterate through its sub-directories (e.g. "Windows 10 Desktop Background
-Slideshow"). This way you'll be able to quickly reconfigure the set of folders
+Slideshow"). This way you are able to quickly reconfigure the set of folders
 that will be consumed.
 
-How to create a parametrized, runnable shortcut?
-Create the shortcut. In "Properties", field "Target": prepend "powershell"
-before "/path/link_Nto1.ps1" and after it, append the desired
-arguments.
+How to create a parameterized, runnable shortcut?
+Create the shortcut. In `Properties`, field `Target`: prepend "powershell"
+before "\path\link_Nto1.ps1" and after it, append the desired arguments. Set
+field `Start in` relative to the location of the specified folders.
 
 .NOTES
 Files with equal names are considered the same.
@@ -31,9 +31,9 @@ One or more source directories.
 Either 'HardLink' or 'SymbolicLink'. Default: 'HardLink'
 
 .EXAMPLE
-PS> ./link_Nto1.ps1 dst_dir src_dir1,src_dir2
+PS> .\link_Nto1.ps1 dst_dir src_dir1,src_dir2
 .EXAMPLE
-PS> ./link_Nto1.ps1 -dst dst_dir -srcs src_dir1 -ItemType SymbolicLink
+PS> .\link_Nto1.ps1 -dst dst_dir -srcs src_dir1 -ItemType SymbolicLink
 
 .LINK
 https://github.com/VaSe7u/link_Nto1
@@ -51,7 +51,7 @@ $src_files = @()  # array that will be populated with all source file names
 
 # populate the `dst_files` array
 Write-Verbose("Populating ``dst_files``:")
-Get-ChildItem "./$dst" |
+Get-ChildItem ".\$dst" |
 ForEach-Object {
 	$dst_files += $_.ToString()
 	Write-Verbose(" - $_")
@@ -82,25 +82,25 @@ foreach($src in $srcs) {  # iterate through the specified source directories
 	# Start-Sleep -Seconds 3
 	# srcs progress bar ~~~
 
-	Write-Host("Iterating directory ./$src :")
+	Write-Host("Iterating directory .\$src :")
 
 	$file_cntr = 0
-	Get-ChildItem "./$src" |
+	Get-ChildItem ".\$src" |
 	Foreach-Object {
 		
 		# files progress bar ---
 		$file_cntr++
 		$files_progress_activity = ($verb.toCharArray()[0].tostring().toUpper() + $verb.remove(0, 1)) + " linking"
-		$status = "$file_cntr/$((Get-ChildItem "./$src").count)"
-		$percent = (($file_cntr / $((Get-ChildItem "./$src").count)) * 100)
+		$status = "$file_cntr/$((Get-ChildItem ".\$src").count)"
+		$percent = (($file_cntr / $((Get-ChildItem ".\$src").count)) * 100)
 		Write-Progress -Id 1 -ParentId 0 -Activity $files_progress_activity -Status $status -CurrentOperation $_ -PercentComplete $percent
 		# files progress bar ~~~
 
-		Write-Host(" - $verb linking ./$src/$_ to ./$dst/$_") -NoNewline
+		Write-Host(" - $verb linking .\$src\$_ to .\$dst\$_") -NoNewline
 
 		# linking will fail if the file already exists
 		try {
-			New-Item -ItemType $ItemType -ErrorAction Stop -Path "./$dst/$_" -Target "./$src/$_" > $null
+			New-Item -ItemType $ItemType -ErrorAction Stop -Path ".\$dst\$_" -Target ".\$src\$_" > $null
 			Write-Host(" - success")
 		} catch [System.IO.IOException] {
 			Write-Host(" - file already exists")
@@ -130,6 +130,6 @@ foreach($file in $dst_files) {
 
 	if ($file -notin $src_files) {
 		Write-Verbose " - $file"
-		Remove-Item ./$dst/$file
+		Remove-Item .\$dst\$file
 	}
 }
