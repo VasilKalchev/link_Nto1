@@ -1,6 +1,6 @@
 # **Link Nto1**
 
-[![Download](https://img.shields.io/badge/download-latest-blue.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/VaSe7u/link_Nto1/releases/latest) [![license](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](LICENSE)
+[![Download](https://img.shields.io/github/v/release/vase7u/link_Nto1?color=blue&logo=github&style=flat-square)](https://github.com/VaSe7u/link_Nto1/releases/latest) [![license](https://img.shields.io/github/license/vase7u/link_Nto1?color=lightgrey&style=flat-square)](LICENSE)
 
 Creates hard or symbolic links inside the destination directory to every file from the source directories.
 
