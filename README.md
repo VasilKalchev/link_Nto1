@@ -1,6 +1,5 @@
-`Link files from multiple directories into one`
+*Link files from multiple directories into one*
 # **Link Nto1** [![Download](https://img.shields.io/badge/download-1.0.0-blue.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/VaSe7u/link_Nto1/archive/v1.0.0.zip) [![license](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://opensource.org/licenses/mit-license.php)
-
 
 Creates hard or symbolic links inside the destination directory to every file
 from the source directories.
@@ -23,8 +22,6 @@ consumed.*
 ```powershell
 link_Nto1.ps1 [-dst] <String> [-srcs] <String[]> [[-ItemType] <String>]
 ```
-
-</br>
 
 ### **Basic example**
 Create hard links in `dst_dir` to every file from `src_dir1` and `src_dir2`:
@@ -57,8 +54,6 @@ PS> ./link_Nto1.ps1 dst_dir src_dir1,src_dir2
 +   └─ file22.ext (hard link)
 ```
 
-</br>
-
 ### **Select link type**
 > Available options: `HardLink` and `SymbolicLink`
 
@@ -86,9 +81,8 @@ PS> ./link_Nto1.ps1 -dst dst_dir -srcs src_dir -ItemType SymbolicLink
 +   └─ file2.ext (sym link to ../src_dir/file2.ext)
 ```
 
-</br>
+<details><summary><strong>Windows 10 Desktop Slideshow example</strong></summary>
 
-### <details><summary>**Windows 10 Desktop Slideshow example**</summary>
 ```
   slideshow/
   ├─ link_Nto1.ps1
@@ -116,8 +110,6 @@ PS> ./link_Nto1.ps1 -dst _target -srcs beach,nature
 
 ```diff
   slideshow/
-  ├─ link_Nto1.ps1
-  │
   | ...
   │
   └─ _target/
@@ -134,8 +126,6 @@ PS> ./link_Nto1.ps1 -dst _target -srcs beach,electronics
 
 ```diff
   slideshow/
-  ├─ link_Nto1.ps1
-  │
   | ...
   │
   └─ _target/
@@ -149,9 +139,8 @@ PS> ./link_Nto1.ps1 -dst _target -srcs beach,electronics
 ```
 </details>
 
-</br>
+<details><summary><strong>How to create a parameterized, runnable shortcut?</strong></summary>
 
-### <details><summary>**How to create a parameterized, runnable shortcut?**</summary>
 - create the shortcut
 - in `Properties`:
   * in field `Target`:
