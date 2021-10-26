@@ -18,7 +18,7 @@ that will be consumed.
 How to create a parameterized, runnable shortcut?
 Create the shortcut. In `Properties`, field `Target`: prepend "powershell"
 before "\path\link_Nto1.ps1" and after it, append the desired arguments. Set
-field `Start in` relative to the location of the specified folders.
+field `Start in` according to the location of the specified folders.
 
 .NOTES
 Files with equal names are considered the same.

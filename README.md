@@ -1,4 +1,3 @@
-*Link files from multiple directories into one*
 # **Link Nto1** [![Download](https://img.shields.io/badge/download-1.0.0-blue.svg?style=flat-square&logo=github&logoColor=white)](https://github.com/VaSe7u/link_Nto1/archive/v1.0.0.zip) [![license](https://img.shields.io/badge/license-MIT-lightgrey.svg?style=flat-square)](https://opensource.org/licenses/mit-license.php)
 
 Creates hard or symbolic links inside the destination directory to every file
@@ -16,7 +15,7 @@ consumed.*
   <img src="./img/screenshot.png" alt="link_Nto1 screenshot" width="738">
 </p> -->
 
-</br>
+---
 
 ## **How to use it**
 ```powershell
@@ -54,7 +53,7 @@ PS> ./link_Nto1.ps1 dst_dir src_dir1,src_dir2
 +   └─ file22.ext (hard link)
 ```
 
-### **Select link type**
+### **Select link type example**
 > Available options: `HardLink` and `SymbolicLink`
 
 Create symbolic links inside `dst_dir` to every file from `src_dir`:
@@ -146,7 +145,7 @@ PS> ./link_Nto1.ps1 -dst _target -srcs beach,electronics
   * in field `Target`:
     + prepend "powershell" before "\path\link_Nto1.ps1"
     + append the desired arguments after "\path\link_Nto1.ps1"
- - set field `Start in` relative to the location of the specified folders
+ - set field `Start in` according to the location of the specified folders
 
 </details>
 
