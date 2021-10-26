@@ -20,4 +20,4 @@ jobs:
           NUGET_KEY: ${{ secrets.NUGET_KEY }}
         shell: pwsh
         run: |
-          Publish-Script -Path /tmp/link_Nto1.ps1 -NuGetApiKey $env:NUGET_KEY -Verbose
+          Publish-Script -Path link_Nto1.ps1 -NuGetApiKey $env:NUGET_KEY -Verbose
