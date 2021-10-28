@@ -1,8 +1,9 @@
-# **Link Nto1**
-
-[![Download](https://img.shields.io/github/v/release/vase7u/link_Nto1?color=blue&logo=github&style=flat-square)](https://github.com/VaSe7u/link_Nto1/releases/latest) [![license](https://img.shields.io/github/license/vase7u/link_Nto1?color=lightgrey&style=flat-square)](LICENSE)
+# **Link Nto1** 
 
 Creates hard or symbolic links inside the destination directory to every file from the source directories.
+
+[![PowerShell Gallery](https://img.shields.io/powershellgallery/v/link_Nto1?color=015FA5&logo=powershell&style=flat-square)](https://www.powershellgallery.com/packages/link_Nto1)
+[![license](https://img.shields.io/github/license/vase7u/link_Nto1?color=lightgrey&style=flat-square)](LICENSE)
 
 > *This can be useful when you want to specify multiple folders to be consumed by
 a program, but the program only allows selecting a single folder and it doesn't
@@ -17,6 +18,11 @@ consumed.*
 </p> -->
 
 ---
+
+## **Installation**
+```powershell
+Install-Script -Name link_Nto1
+```
 
 ## **How to use it**
 ```powershell
@@ -139,7 +145,7 @@ PS> ./link_Nto1.ps1 -dst _target -srcs beach,electronics
 ```
 </details>
 
-<details><summary><strong>How to create a parameterized, runnable shortcut?</strong></summary>
+<details><summary><strong>How to create a parameterized, runnable shortcut</strong></summary>
 
 - create the shortcut
 - in `Properties`:
