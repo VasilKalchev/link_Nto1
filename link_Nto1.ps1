@@ -1,6 +1,31 @@
-# author: Vasil Kalchev
-# date: 2020-10-23
-# version: 1.0.0
+<#PSScriptInfo
+
+.VERSION 1.0.1
+
+.GUID aca602e8-0ebe-43e8-84a7-ea1d33a3a4d0
+
+.AUTHOR Vasil Kalchev
+
+.COMPANYNAME
+
+.COPYRIGHT MIT
+
+.TAGS hard link symbolic link
+
+.LICENSEURI https://github.com/VaSe7u/link_Nto1/blob/master/LICENSE
+
+.PROJECTURI https://github.com/VaSe7u/link_Nto1
+
+.ICONURI
+
+.EXTERNALMODULEDEPENDENCIES
+
+.REQUIREDSCRIPTS
+
+.EXTERNALSCRIPTDEPENDENCIES
+
+.RELEASENOTES
+#>
 
 <#
 .SYNOPSIS
@@ -82,12 +107,12 @@ foreach($src in $srcs) {  # iterate through the specified source directories
 	# Start-Sleep -Seconds 3
 	# srcs progress bar ~~~
 
-	Write-Host("Iterating directory .\$src :")
+	Write-Output("Iterating directory .\$src :")
 
 	$file_cntr = 0
 	Get-ChildItem ".\$src" |
 	Foreach-Object {
-		
+
 		# files progress bar ---
 		$file_cntr++
 		$files_progress_activity = ($verb.toCharArray()[0].tostring().toUpper() + $verb.remove(0, 1)) + " linking"
@@ -101,11 +126,11 @@ foreach($src in $srcs) {  # iterate through the specified source directories
 		# linking will fail if the file already exists
 		try {
 			New-Item -ItemType $ItemType -ErrorAction Stop -Path ".\$dst\$_" -Target ".\$src\$_" > $null
-			Write-Host(" - success")
+			Write-Output(" - success")
 		} catch [System.IO.IOException] {
-			Write-Host(" - file already exists")
+			Write-Output(" - file already exists")
 		}
-		
+
 		$src_files += $_.ToString()  # remember every file that was linked
 
 	}
